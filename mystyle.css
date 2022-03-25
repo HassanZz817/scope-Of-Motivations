@@ -1,0 +1,185 @@
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 0.4rem;
+  grid-template-areas:
+    "img-1 img-2 img-3 img-3"
+    "img-1 img-5 img-4 img-6"
+    "img-7 img-7 img-8 img-6"
+    "img-9 img-9 img-10 img-10"
+    "img-9 img-9 img-12 img-12"
+    "img-13 img-13 img-12 img-12";
+}
+.image-gallery a {
+  width: 100%;
+  height: 25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.image-gallery a i {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 3rem;
+  position: relative;
+  z-index: 100;
+  padding: 1rem 3rem;
+  border: 2px solid rgb(255, 255, 255, 0.6);
+  border-radius: 0.4rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.image-gallery a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before {
+  opacity: 1;
+}
+
+.img-1 {
+  grid-area: img-1;
+  min-height: 50.5rem;
+  background-image: url("/imges/Re-BlackAndWhite0.png");
+}
+
+.img-2 {
+  grid-area: img-2;
+  background-image: url("/imges/blackAndWhite1.jpg");
+}
+
+.img-3 {
+  grid-area: img-3;
+  background-image: url("/imges/BlackAndWhite2.jpg");
+}
+
+.img-4 {
+  grid-area: img-4;
+  min-height: 25rem;
+  background-image: url("/imges/BlackAndWhite4.jpg");
+}
+
+.img-5 {
+  grid-area: img-5;
+  background-image: url("/imges/BlackAndWhite3.jpg");
+}
+
+.img-6 {
+  grid-area: img-6;
+  min-height: 50.5rem;
+  background-image: url("/imges/Nike1.jpg");
+}
+
+.img-7 {
+  grid-area: img-7;
+  background-image: url("/imges/Jump.jpg");
+}
+
+.img-8 {
+  grid-area: img-8;
+  background-image: url("/imges/Edgy2.jpg");
+}
+
+.img-9 {
+  grid-area: img-9;
+  background-image: url("/imges/Edgy3.jpg");
+}
+
+.img-10 {
+  grid-area: img-10;
+  background-image: url("/imges/Skate2.jpg");
+}
+
+.img-11 {
+  grid-area: img-13;
+  background-image: url("/imges/Mask3.jpg");
+}
+
+.img-12 {
+  grid-area: img-12;
+  background-image: url("/imges/Mask.jpg");
+}
+
+@media screen and(max-width: 900px) {
+  .image-gallery {
+    grid-template-areas:
+      "img-1 img-1 img-2 img-2"
+      "img-1 img-1 img-3 img-3"
+      "img-4 img-4 img-5 img-5"
+      "img-6 img-7 img-7 img-7"
+      "img-8 img-8 img-8 img-8"
+      "img-8 img-8 img-8 img-8"
+      "img-9 img-9 img-10 img-10"
+      "img-9 img-9 img-12 img-12";
+  }
+}
+@media screen and(max-width: 600px) {
+  .image-gallery {
+    grid-template-areas:
+      "img-1 img-1 img-2 img-2"
+      "img-1 img-1 img-3 img-3"
+      "img-4 img-4 img-5 img-5"
+      "img-6 img-7 img-7 img-7"
+      "img-8 img-8 img-8 img-8"
+      "img-8 img-8 img-8 img-8"
+      "img-9 img-9 img-10 img-10"
+      "img-9 img-9 img-12 img-12";
+  }
+}
+@media only screen and (width: 375px) and (height: 635px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  .image-gallery {
+    grid-template-areas:
+      "img-1 img-1 img-1 img-1"
+      "img-1 img-1 img-2 img-2"
+      "img-3 img-3 img-2 img-2"
+      "img-4 img-4 img-4 img-4"
+      "img-5 img-5 img-5 img-5"
+      "img-6 img-6 img-7 img-7"
+      "img-8 img-8 img-8 img-8"
+      "img-9 img-9 img-9 img-9"
+      "img-10 img-10 img-10 img-10"
+      "img-11 img-11 img-11 img-11"
+      "img-12 img-12 img-12 img-12";
+  }
+}
